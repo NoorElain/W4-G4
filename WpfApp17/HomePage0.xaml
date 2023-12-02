@@ -1,0 +1,75 @@
+﻿<Page x:Class="WpfApp17.Page3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp17"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page3">
+
+
+    <Grid Background="Black" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="62*"/>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="167*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="34.5"/>
+            <ColumnDefinition Width="727.5"/>
+            <ColumnDefinition Width="38"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Book" HorizontalAlignment="Center" Margin="0,-6,0,0" VerticalAlignment="Top" Foreground="White" FontSize="36" FontWeight="Bold" Grid.Column="1" Height="58" Width="98"/>
+        <Label Content="Book Id : " HorizontalAlignment="Left" FontSize="20" Margin="28,4,0,0" VerticalAlignment="Top" Height="38" Foreground="White" Grid.Column="1" Width="104" FontWeight="Bold" Grid.Row="2"/>
+        <TextBox Style="{StaticResource TextStyles}" x:Name="txtID" HorizontalAlignment="Left" Margin="140,6,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="242" Height="32" Grid.Column="1" FontSize="18" Grid.Row="2"/>
+        <Label Content="Book Title :" HorizontalAlignment="Left" FontSize="20" Margin="14,7,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1" FontWeight="Bold" Height="37" Width="118" Grid.Row="4"/>
+        <TextBox Style="{StaticResource TextStyles}" x:Name="txtTitle"  HorizontalAlignment="Left" Margin="140,0,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Center" Width="242" Height="32" Grid.Row="4" Grid.Column="1" FontSize="18" />
+        <Label Content="Price : " HorizontalAlignment="Left" FontSize="20" Margin="46,4,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.577,-1.386" Foreground="White" Grid.Column="1" FontWeight="Bold" Height="37" Width="74" Grid.Row="3"/>
+        <TextBox Style="{StaticResource TextStyles}" x:Name="txtPrice"  HorizontalAlignment="Left" Margin="140,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="242" Height="31" Grid.Column="1" Grid.Row="3" FontSize="18"/>
+        <Button Content="Update" HorizontalAlignment="Left" FontSize="20" Margin="406,0,0,0" VerticalAlignment="Center" Click="update_Click" Height="30" Grid.Column="1" Width="114" Grid.Row="4" Background="#FFF5CB07" FontWeight="Bold">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="25"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="delete" HorizontalAlignment="Left" FontSize="20" Margin="406,0,0,0" VerticalAlignment="Center" Width="114" Click="delet_Click_1" Grid.Column="1" Height="31" Grid.Row="3" Background="#FFF5CB07" FontWeight="Bold">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="25"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <DataGrid x:Name="dataGrid"  Height="147" VerticalAlignment="Top" Margin="8,8,12,0" SelectionChanged="dataGrid_SelectionChanged" Grid.Column="1" Grid.Row="5"/>
+        <Button x:Name="btnInsert"  HorizontalAlignment="Left" FontSize="20" Margin="406,6,0,0" VerticalAlignment="Top" Width="114" Click="btnInsert_Click" Grid.Column="1" Height="32" Content="Insert" Background="#FFF5CB07" FontWeight="Bold" Grid.Row="2">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="25"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="btnSearch"  HorizontalAlignment="Left" FontSize="20" Margin="10,20,0,8" Width="120" Click="btnSearch_Click" Grid.Column="1" Content="Search" Background="#FFF5CB07" FontWeight="Bold" Grid.Row="1">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="25"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button  x:Name="btnRefresh"  HorizontalAlignment="Left" FontSize="20" Margin="640,0,0,0" VerticalAlignment="Top" Width="80" Click="btnRefresh_Click" Grid.Column="1" Height="32" Content="Refresh" Background="#FFF5CB07" Foreground="Black" FontWeight="Bold">
+        </Button>
+        <ComboBox Name="combo" HorizontalAlignment="Left" Margin="524,20,0,0" VerticalAlignment="Top" Width="192" Height="32" SelectionChanged="combo_SelectionChanged" Grid.Column="1" Grid.Row="1">
+            <ComboBoxItem>BookID</ComboBoxItem>
+            <ComboBoxItem>Title</ComboBoxItem>
+            <ComboBoxItem>Price</ComboBoxItem>
+        </ComboBox>
+        <TextBox Style="{StaticResource TextStyles}" x:Name="txtSearch" HorizontalAlignment="Left" Margin="140,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="242" Height="32" Grid.Column="1" FontSize="18" Grid.Row="1"/>
+        <Label Content="Search By :" HorizontalAlignment="Left" FontSize="20" Margin="406,18,0,0" VerticalAlignment="Top" Foreground="White" Grid.Column="1" FontWeight="Bold" Height="36" Width="114" Grid.Row="1"/>
+        <Button Content="X" HorizontalAlignment="Center" VerticalAlignment="Top" Height="32" Width="36" FontWeight="Bold" FontSize="20" Click="Close_Click" Background="#FFF50707" Grid.Column="2"/>
+
+    </Grid>
+</Page>
